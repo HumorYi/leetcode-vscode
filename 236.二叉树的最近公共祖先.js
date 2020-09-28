@@ -21,7 +21,7 @@
 
 /**
  * 递归
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {TreeNode} root
  * @param {TreeNode} p
@@ -44,7 +44,7 @@
  *  1、从上往下找，记录找到 p 和 q 节点的路线
  *  2、递归遍历 p 节点，将 p 节点 到 根节点的路线 记录下来 ancestors
  *  3、递归遍历 ancestors 是否有 q 节点，没有就往 q 节点的父节点找，最终 q 节点就是 最近公共祖先节点
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1 || 3n)
  * @param {TreeNode} root
  * @param {TreeNode} p

@@ -1,31 +1,32 @@
 /*
- * @lc app=leetcode.cn id=203 lang=typescript
+ * @lc app=leetcode.cn id=203 lang=javascript
  *
  * [203] 移除链表元素
  */
 
 // @lc code=start
-
 /**
  * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
  * }
  */
-
-//  基于原链表操作
-/* function removeElements(head: ListNode | null, val: number): ListNode | null {
+/**
+ * 基于原链表操作
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(1)
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+/* function removeElements(head, val) {
   if (head === null) {
     return null
   }
 
-  let curr: ListNode | null = head
-  let prev: ListNode | null = head
+  let curr = head
+  let prev = head
 
   while (curr) {
     if (curr.val === val) {
@@ -44,8 +45,12 @@
   return head
 } */
 
-// 使用哨兵
-function removeElements(head: ListNode | null, val: number): ListNode | null {
+/**
+ * 使用哨兵
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(1)
+ */
+function removeElements(head, val) {
   if (head === null) {
     return null
   }

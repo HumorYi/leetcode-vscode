@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=104 lang=typescript
+ * @lc app=leetcode.cn id=104 lang=javascript
  *
  * [104] 二叉树的最大深度
  */
@@ -7,24 +7,19 @@
 // @lc code=start
 /**
  * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
  * }
  */
-
 /**
  * 递归
- * 时间复杂度：O(n)
- * 空间复杂度：O(1)
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
+ * @param {TreeNode} root
+ * @return {number}
  */
-/* function maxDepth(root: TreeNode | null): number {
+/* function maxDepth(root) {
   // 空树
   if (root === null) {
     return 0
@@ -34,11 +29,11 @@
 } */
 
 /**
- * 递归
- * 时间复杂度：O(n)
- * 空间复杂度：O(2n)
+ * 迭代
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
  */
-function maxDepth(root: TreeNode | null): number {
+function maxDepth(root) {
   // 空树
   if (root === null) {
     return 0
@@ -49,14 +44,16 @@ function maxDepth(root: TreeNode | null): number {
     return 1
   }
 
-  const stack: TreeNode[] = [root]
+  const stack = [root]
   let stackLen = stack.length
   let depth = 1
+  let curr
+  let i
 
   while (stackLen > 0) {
     // 将当前栈左右子树出栈，如果有子树，则入栈
-    for (let i = 0; i < stackLen; i++) {
-      const curr = stack.shift() as TreeNode
+    for (i = 0; i < stackLen; i++) {
+      curr = stack.shift()
 
       curr.left && stack.push(curr.left)
       curr.right && stack.push(curr.right)

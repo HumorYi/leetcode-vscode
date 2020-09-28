@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=98 lang=typescript
+ * @lc app=leetcode.cn id=98 lang=javascript
  *
  * [98] 验证二叉搜索树
  */
@@ -7,24 +7,20 @@
 // @lc code=start
 /**
  * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
  * }
  */
 
 /**
  * 递归
- * 时间复杂度：O(n)
- * 空间复杂度：O(1)
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
+ * @param {TreeNode} root
+ * @return {boolean}
  */
-function isValidBST(root: TreeNode | null, lower = -Infinity, upper = Infinity): boolean {
+/* function isValidBST(root, lower = -Infinity, upper = Infinity) {
   // 空树
   if (root === null) {
     return true
@@ -36,14 +32,14 @@ function isValidBST(root: TreeNode | null, lower = -Infinity, upper = Infinity):
   }
 
   return isValidBST(root.left, lower, root.val) && isValidBST(root.right, root.val, upper)
-}
+} */
 
 /**
  * 迭代：中序遍历
- * 时间复杂度：O(n)
- * 空间复杂度：O(n)
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
  */
-/* function isValidBST(root: TreeNode | null): boolean {
+function isValidBST(root) {
   // 空树
   if (root === null) {
     return true
@@ -54,9 +50,9 @@ function isValidBST(root: TreeNode | null, lower = -Infinity, upper = Infinity):
     return true
   }
 
-  let curr: TreeNode | null = root
+  let curr = root
   let lastVal = -Infinity
-  const stack: TreeNode[] = []
+  const stack = []
 
   while (curr || stack.length > 0) {
     // 不是二叉树
@@ -65,7 +61,7 @@ function isValidBST(root: TreeNode | null, lower = -Infinity, upper = Infinity):
       curr = curr.left
     }
 
-    curr = stack.pop() as TreeNode
+    curr = stack.pop()
 
     if (curr.val <= lastVal) {
       return false
@@ -76,5 +72,5 @@ function isValidBST(root: TreeNode | null, lower = -Infinity, upper = Infinity):
   }
 
   return true
-} */
+}
 // @lc code=end

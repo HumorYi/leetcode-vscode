@@ -1,30 +1,34 @@
 /*
- * @lc app=leetcode.cn id=20 lang=typescript
+ * @lc app=leetcode.cn id=20 lang=javascript
  *
  * [20] 有效的括号
  */
 
 // @lc code=start
-
-// 方向括弧匹配
-/* function isValid(s: string): boolean {
+/**
+ * 反向括弧匹配
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
+ * @param {string} s
+ * @return {boolean}
+ */
+/* var isValid = function (s) {
   const brackets = new Map()
   brackets.set(')', '(')
   brackets.set('}', '{')
   brackets.set(']', '[')
 
-  const stack: string[] = []
+  const stack = []
   let stackLen = 0
 
   for (let i = 0, len = s.length; i < len; i++) {
     const item = s[i]
-    const left = brackets.get(item) as string
 
-    stackLen = stack.length
-
-    if (stackLen > 0 && stack[stackLen - 1] === left) {
+    if (stackLen > 0 && stack[stackLen - 1] === brackets.get(item)) {
+      stackLen--
       stack.pop()
     } else {
+      stackLen++
       stack.push(item)
     }
   }
@@ -32,14 +36,18 @@
   return stackLen === 0
 } */
 
-// 正向括弧匹配
-function isValid(s: string): boolean {
+/**
+ * 正向括弧匹配
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
+ */
+function isValid(s) {
   const brackets = new Map()
   brackets.set('(', ')')
   brackets.set('{', '}')
   brackets.set('[', ']')
 
-  const stack: string[] = []
+  const stack = []
 
   for (let i = 0, len = s.length; i < len; i++) {
     const item = s[i]

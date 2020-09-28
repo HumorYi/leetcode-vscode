@@ -16,8 +16,8 @@ slower
 
 /**
  * 使用 cache 缓存已遍历的 节点，如果有找到，则证明是环
- * 时间复杂度：O(n)
- * 空间复杂度：O(n)
+ * 时间复杂度：O(N)
+ * 空间复杂度：O(N)
  * @param {ListNode} head
  * @return {ListNode}
  */
@@ -47,7 +47,7 @@ slower
  *  开始节点从头开始一步一步走，走完 a 路程，慢指针从 B 点开始一步一步走，走完 c 路程，
  *  开始节点 与 慢指针 相遇时即为入环的第一个节点
  *
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {ListNode} head
  * @return {ListNode}

@@ -18,7 +18,7 @@
 
 /**
  * 递归
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {TreeNode} root
  * @return {number[]}
@@ -35,7 +35,7 @@
 
 /**
  * 迭代：先遍历左节点，再遍历右节点，最后再遍历自己
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(2n+1)
  * @param {TreeNode} root
  * @return {number[]}
@@ -68,7 +68,7 @@
 
 /**
  * 迭代：先遍历左节点，再遍历右节点，最后再遍历自己
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(2n+1)
  * @param {TreeNode} root
  * @return {number[]}

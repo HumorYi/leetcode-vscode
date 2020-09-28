@@ -14,7 +14,7 @@
  */
 /**
  * 递归，将右树挨个转换成左树，将左树挨个转换成右树
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {TreeNode} root
  * @return {TreeNode}

@@ -22,7 +22,7 @@
 
 /**
  * 递归
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {TreeNode} root
  * @param {TreeNode} p
@@ -43,7 +43,7 @@
 
 /**
  * 迭代
- * 时间复杂度：O(n)
+ * 时间复杂度：O(N)
  * 空间复杂度：O(1)
  * @param {TreeNode} root
  * @param {TreeNode} p

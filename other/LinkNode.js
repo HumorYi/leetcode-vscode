@@ -1,23 +1,17 @@
 class LinkNode {
-  val: any
-  next: LinkNode
-
-  constructor(val: any, next = null) {
+  constructor(val, next = null) {
     this.val = val
     this.next = next
   }
 }
 
 class LinkNodeList {
-  head: LinkNode
-  length: number
-
   constructor() {
     this.head = null
     this.length = 0
   }
 
-  append(val: any): LinkNode {
+  append(val) {
     const linkNode = new LinkNode(val)
 
     if (this.head === null) {
@@ -37,7 +31,7 @@ class LinkNodeList {
     return linkNode
   }
 
-  removeAt(index: number): LinkNode {
+  removeAt(index) {
     const size = this.size()
     if (this.head === null || size === 0 || size < index) {
       return null
@@ -67,7 +61,7 @@ class LinkNodeList {
     return curr
   }
 
-  insert(val: any, index: number): LinkNode {
+  insert(val, index) {
     const size = this.size()
     if (size < index) {
       throw new Error(`当前节点数量：${size}，插入 ${index} 越界`)
@@ -98,7 +92,7 @@ class LinkNodeList {
     return linkNode
   }
 
-  indexOf(val: any): number {
+  indexOf(val) {
     const size = this.size()
     if (size === 0) {
       return -1
@@ -118,7 +112,7 @@ class LinkNodeList {
     return -1
   }
 
-  find(val: any): LinkNode {
+  find(val) {
     const size = this.size()
     if (size === 0) {
       return null
@@ -137,17 +131,17 @@ class LinkNodeList {
     return null
   }
 
-  size(): number {
+  size() {
     return this.length
   }
 
-  print(): void {
+  print() {
     if (this.head === null) {
       console.log('no data')
       return
     }
 
-    const ret: any[] = []
+    const ret = []
     let curr = this.head
 
     while (curr) {
